@@ -1,0 +1,794 @@
+navbar
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font (thin & elegant) -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<title>Elegant Navbar</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #ffffff;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Navbar */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 50px;
+        background: #eedfc5; /* cream */
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        position: sticky;
+        top: 0;
+    }
+
+    /* Logo */
+    .logo {
+        font-family: 'Playfair Display', serif;
+        font-size: 24px;
+        letter-spacing: 2px;
+        color: #444;
+    }
+
+    /* Nav links */
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 35px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #555;
+        font-weight: 300;
+        font-size: 15px;
+        position: relative;
+        transition: 0.3s;
+    }
+
+    /* Soft underline animation */
+    .nav-links a::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 1px;
+        bottom: -4px;
+        left: 0;
+        background: #c8a97e; /* soft gold */
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    .nav-links a:hover {
+        color: #c8a97e;
+    }
+
+    /* Right button */
+    .btn {
+        padding: 6px 16px;
+        border: 1px solid #c8a97e;
+        border-radius: 20px;
+        text-decoration: none;
+        color: #c8a97e;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #c8a97e;
+        color: white;
+    }
+
+    /* Mobile */
+    .menu-toggle {
+        display: none;
+        font-size: 22px;
+        cursor: pointer;
+        color: #555;
+    }
+
+    @media(max-width: 768px) {
+        .nav-links {
+            position: absolute;
+            top: 70px;
+            right: 0;
+            background: #f8f5f0;
+            flex-direction: column;
+            width: 200px;
+            padding: 20px;
+            display: none;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .menu-toggle {
+            display: block;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">NOVA</div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="homepage.php">Home</a></li>
+        <li><a href="#">Collections</a></li>
+        <li><a href="aboutpage.php">About</a></li>
+        <li><a href="contactpage.php">Contact</a></li>
+    </ul>
+    <div>
+        <a href="#" class="btn">LOGIN</a>
+        <a href="#" class="btn">BUY NOW</a>
+    </div>
+    
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
+---------------------------------------------------------------------------------------------------------------------
+aboutpage
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About NOVA</title>
+
+<!-- Elegant Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        background: #ffffff;
+        font-family: 'Poppins', sans-serif;
+        color: #444;
+    }
+
+    /* Container */
+    .about-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 60px 8%;
+        gap: 50px;
+        background: #faf8f5; /* soft cream-white */
+    }
+
+    /* Text Side */
+    .about-text {
+        flex: 1;
+    }
+
+    .about-text h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 40px;
+        margin-bottom: 20px;
+        color: #333;
+        letter-spacing: 2px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+        line-height: 1.8;
+        font-weight: 300;
+        color: #555;
+    }
+
+    .brand {
+        color: #c8a97e; /* soft gold accent */
+        font-weight: 400;
+    }
+
+    /* Image Side */
+    .about-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .about-image img {
+        width: 100%;
+        max-width: 420px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+        .about-section {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 90%;
+        }
+    }
+</style>
+</head>
+
+<body>
+<?php include 'navbarnova.php'; ?>
+
+<section class="about-section">
+
+    <!-- Left Side Text -->
+    <div class="about-text">
+        <h1>About <span class="brand">NOVA</span></h1>
+
+        <p>
+            NOVA began as a small dream in the heart of its founder, <strong>Jenny</strong>.
+            What started as a passion for timeless beauty and delicate craftsmanship
+            soon turned into a journey of creating jewellery that tells a story.
+            <br><br>
+            In the early days, Jenny worked from a small studio, designing each piece
+            with care and love. Her vision was simple — to create jewellery that feels
+            personal, elegant, and everlasting.
+            <br><br>
+            Over time, NOVA grew into a brand that represents grace, purity, and modern
+            elegance. Every collection reflects the journey of growth, creativity, and
+            the belief that beauty lies in simplicity.
+        </p>
+    </div>
+
+    <!-- Right Side Image -->
+    <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=800&q=80" 
+             alt="NOVA Brand Journey">
+    </div>
+
+</section>
+<?php include 'footerpage.php'; ?>
+</body>
+</html>
+--------------------------------------------------------------------------------------------------------------------------
+footer
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Elegant Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<title>NOVA Footer</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: #ffffff;
+    }
+
+    /* Footer */
+    .footer {
+        background: #f1efed; /* soft cream */
+        padding: 60px 8% 30px;
+        color: #6b6b6b;
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    /* Brand */
+    .footer-brand h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 26px;
+        letter-spacing: 2px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .footer-brand p {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 1.6;
+        max-width: 300px;
+    }
+
+    /* Links */
+    .footer-links h3,
+    .footer-contact h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links ul li {
+        margin: 8px 0;
+    }
+
+    .footer-links ul li a {
+        text-decoration: none;
+        color: #555;
+        font-weight: 300;
+        transition: 0.3s;
+    }
+
+    .footer-links ul li a:hover {
+        color: #c8a97e; /* soft gold */
+    }
+
+    /* Contact */
+    .footer-contact p {
+        font-size: 14px;
+        font-weight: 300;
+        margin: 6px 0;
+    }
+
+    /* Bottom */
+    .footer-bottom {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #eedfc5;
+        font-size: 13px;
+        font-weight: 300;
+    }
+
+    .gold {
+        color: #c8a97e;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+        .footer-container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .footer-brand p {
+            margin: 0 auto;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+            <h2>NOVA</h2>
+            <p>
+                Timeless elegance crafted with love by Jenny.  
+                NOVA brings you jewellery that tells a story of beauty, grace, and simplicity.
+            </p>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-contact">
+            <h3>Contact</h3>
+            <p>Email: support@nova.com</p>
+            <p>Phone: +92 300 1234567</p>
+            <p>Location: Karachi, Pakistan</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 <span class="gold">NOVA</span>. All rights reserved.
+    </div>
+
+</footer>
+
+</body>
+</html>
+-------------------------------------------------------------------------------------------------------------------------
+home
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOVA Jewellery</title>
+
+<!-- Elegant Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: #ffffff;
+        color: #444;
+    }
+
+    /* NAVBAR */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 8%;
+        background: #f8f5f0;
+        position: sticky;
+        top: 0;
+    }
+
+    .logo {
+        font-family: 'Playfair Display', serif;
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #555;
+        font-weight: 300;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #c8a97e;
+    }
+
+    /* HERO */
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 80px 8%;
+        background: #faf8f5;
+        gap: 40px;
+    }
+
+    .hero-text {
+        flex: 1;
+    }
+
+    .hero-text h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 48px;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+    }
+
+    .hero-text p {
+        font-weight: 300;
+        line-height: 1.8;
+        font-size: 16px;
+    }
+
+    .hero-btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: 1px solid #c8a97e;
+        color: #c8a97e;
+        text-decoration: none;
+        border-radius: 25px;
+        display: inline-block;
+        transition: 0.3s;
+    }
+
+    .hero-btn:hover {
+        background: #c8a97e;
+        color: white;
+    }
+
+    .hero-image {
+        flex: 1;
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 420px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    /* COLLECTIONS */
+    .collections {
+        padding: 60px 8%;
+        text-align: center;
+    }
+
+    .collections h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .cards {
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        background: #f8f5f0;
+        padding: 20px;
+        width: 220px;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .card h3 {
+        font-family: 'Playfair Display', serif;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    /* FOOTER */
+    .footer {
+        background: #f8f5f0;
+        text-align: center;
+        padding: 30px;
+        margin-top: 50px;
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .gold {
+        color: #c8a97e;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 768px) {
+        .hero {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .nav-links {
+            display: none;
+        }
+    }
+</style>
+</head>
+
+<body>
+<?php include 'navbarnova.php'; ?>
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+    <div class="hero-text">
+        <h1>Timeless Elegance</h1>
+        <p>
+            Discover NOVA, where every piece of jewellery tells a story of grace and beauty.  
+            Designed with love by Jenny, crafted for elegance that lasts forever.
+        </p>
+        <a href="#" class="hero-btn">Explore Collection</a>
+    </div>
+
+    <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=800&q=80" 
+             alt="Jewellery Image">
+    </div>
+
+</section>
+
+<!-- COLLECTIONS -->
+<section class="collections">
+
+    <h2>Our Collections</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1600721391689-2564bb8055de?auto=format&fit=crop&w=800&q=80">
+            <h3>Rings</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=800&q=80">
+            <h3>Necklaces</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1611599537845-1c7aca0091c0?auto=format&fit=crop&w=800&q=80">
+            <h3>Earrings</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1617038260897-4d8b6c0b7b5d?auto=format&fit=crop&w=800&q=80">
+            <h3>Bracelets</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<?php include 'footerpage.php'; ?>
+</body>
+</html>
+--------------------------------------------------------------------------------------------------------------------------
+contact
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1000px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .contact-box {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .contact-info, .contact-form {
+        flex: 1;
+        min-width: 280px;
+    }
+
+    .contact-info p {
+        margin: 10px 0;
+        color: #555;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .contact-form button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: #222;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+        background: #eedfc5;
+    }
+
+    .success {
+        color: green;
+        text-align: center;
+        display: none;
+    }
+
+    @media(max-width: 768px) {
+        .contact-box {
+            flex-direction: column;
+        }
+    }
+</style>
+</head>
+
+<body>
+<?php include 'navbarnova.php'; ?>
+<div class="container">
+    <h2>Contact Us</h2>
+
+    <div class="contact-box">
+        
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <p>Email: example@email.com</p>
+            <p>Phone: +92 300 1234567</p>
+            <p>Address: Karachi, Pakistan</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <form onsubmit="return validateForm()">
+                <input type="text" id="name" placeholder="Your Name">
+                <input type="email" id="email" placeholder="Your Email">
+                <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p class="success" id="successMsg">Message sent successfully!</p>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function validateForm() {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    if(name === "" || email === "" || message === "") {
+        alert("Please fill all fields!");
+        return false;
+    }
+
+    document.getElementById("successMsg").style.display = "block";
+    return false; // prevent actual submit (demo only)
+}
+</script>
+<?php include 'footerpage.php'; ?>
+</body>
+</html>
+----------------------------------------------------------------------------------------------------------------

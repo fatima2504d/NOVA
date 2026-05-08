@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navbar</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Navbar container */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #a1815d;
+        padding: 10px 20px;
+    }
+
+    /* Logo */
+    .logo {
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    /* Nav links */
+    .nav-links {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links li {
+        margin-left: 20px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #f39c12;
+    }
+
+    /* Mobile menu button */
+    .menu-toggle {
+        display: none;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            background-color: #ffee8a;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 200px;
+        }
+
+        .nav-links li {
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .menu-toggle {
+            display: block;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">NOVA</div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Cart</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
