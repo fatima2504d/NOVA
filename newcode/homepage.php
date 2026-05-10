@@ -16,40 +16,6 @@
         color: #444;
     }
 
-    /* NAVBAR */
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 18px 8%;
-        background: #f8f5f0;
-        position: sticky;
-        top: 0;
-    }
-
-    .logo {
-        font-family: 'Playfair Display', serif;
-        font-size: 24px;
-        letter-spacing: 2px;
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 30px;
-        list-style: none;
-    }
-
-    .nav-links a {
-        text-decoration: none;
-        color: #555;
-        font-weight: 300;
-        transition: 0.3s;
-    }
-
-    .nav-links a:hover {
-        color: #c8a97e;
-    }
-
     /* HERO */
     .hero {
         display: flex;
@@ -105,47 +71,112 @@
         box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
 
-    /* COLLECTIONS */
-    .collections {
+    /* CATEGORY */
+    .Categorys {
         padding: 60px 8%;
         text-align: center;
     }
 
-    .collections h2 {
+    .Categorys h2 {
         font-family: 'Playfair Display', serif;
         font-size: 32px;
         margin-bottom: 40px;
     }
+    /*tiffiney*/
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
 
-    .cards {
-        display: flex;
-        gap: 25px;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+html{
+    font-size:62.5%;
+}
 
-    .card {
-        background: #f8f5f0;
-        padding: 20px;
-        width: 220px;
-        border-radius: 10px;
-        transition: 0.3s;
-    }
+body{
+    background:#fdfaf6;
+}
 
-    .card:hover {
-        transform: translateY(-5px);
-    }
+/* GRID SAME */
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(30rem,1fr));
+    gap:2rem;
+    padding:2rem;
+}
 
-    .card img {
-        width: 100%;
-        border-radius: 8px;
-    }
+/* CARD */
+.product{
+    background:#fff;
+    padding:3rem 2rem;
+    text-align:center;
+    border-radius:1.5rem;
+    box-shadow:0 8px 20px rgba(0,0,0,0.05);
+    position:relative;
+    overflow:hidden;
+}
 
-    .card h3 {
-        font-family: 'Playfair Display', serif;
-        margin-top: 10px;
-        font-size: 18px;
-    }
+/* IMAGE */
+.product img{
+    width:26rem;
+    transition:0.4s;
+}
+
+/* ZOOM EFFECT */
+.product:hover img{
+    transform:scale(1.1);
+}
+
+/* TITLE */
+.product h3{
+    font-size:1.5rem;
+    margin-top:1rem;
+    color:#333;
+}
+
+/* PRICE */
+.price{
+    font-size:1.4rem;
+    color:#c9a34e;
+    margin-top:0.5rem;
+}
+
+/* BUTTON */
+.btn{
+    margin-top:1rem;
+    padding:0.8rem 1.5rem;
+    border-radius:2rem;
+    background:#c9a34e;
+    color:#fff;
+    font-size:1.3rem;
+    cursor:pointer;
+    display:inline-block;
+}
+
+/* HOVER BUTTON SHOW */
+.product .btn{
+    opacity:0;
+    transform:translateY(20px);
+}
+
+.product:hover .btn{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* CART BOX */
+/* .cart{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#fff;
+    padding:1rem 2rem;
+    border-radius:1rem;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    font-size:1.4rem;
+} */
+
 
     /* FOOTER */
     .footer {
@@ -191,40 +222,44 @@
     </div>
 
     <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=800&q=80" 
+        <img src="heroimg.webp" 
              alt="Jewellery Image">
     </div>
 
 </section>
 
-<!-- COLLECTIONS -->
-<section class="collections">
+<!-- CATEGORY -->
+<section class="Categorys">
 
-    <h2>Our Collections</h2>
+    <h2>Shope By Category</h2>
 
-    <div class="cards">
+    
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1600721391689-2564bb8055de?auto=format&fit=crop&w=800&q=80">
-            <h3>Rings</h3>
-        </div>
+<div class="container">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=800&q=80">
-            <h3>Necklaces</h3>
-        </div>
+<div class="product">
+    <img src="rings/ring 1.webp">
+    <h3>Diamond Ring</h3>
+    <div class="price">$120</div>
+    <div class="btn" onclick="addToCart()">Add to Cart</div>
+</div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1611599537845-1c7aca0091c0?auto=format&fit=crop&w=800&q=80">
-            <h3>Earrings</h3>
-        </div>
+<div class="product">
+    <img src="bracelet/tiffany knot.webp">
+    <h3>Luxury Bracelet</h3>
+    <div class="price">$200</div>
+    <div class="btn" onclick="addToCart()">Add to Cart</div>
+</div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1617038260897-4d8b6c0b7b5d?auto=format&fit=crop&w=800&q=80">
-            <h3>Bracelets</h3>
-        </div>
+<div class="product">
+    <img src="earrings/elsa peretti.webp">
+    <h3>Gold Earrings</h3>
+    <div class="price">$90</div>
+    <div class="btn" onclick="addToCart()">Add to Cart</div>
+</div>
 
-    </div>
+
+</div>
 
 </section>
 

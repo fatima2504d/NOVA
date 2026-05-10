@@ -20,6 +20,7 @@
         box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         position: sticky;
         top: 0;
+        z-index: 9999;
     }
 
     /* Logo */
@@ -112,18 +113,18 @@
     }
 </style>
 
-<nav class="navbar">
+<nav class="navbar fixed-top">
     <div class="logo">NOVA</div>
 
     <ul class="nav-links" id="navLinks">
         <li><a href="homepage.php">Home</a></li>
-        <li><a href="#">Collections</a></li>
+        <li><a href="collections.php">Collections</a></li>
         <li><a href="aboutpage.php">About</a></li>
         <li><a href="contactpage.php">Contact</a></li>
     </ul>
     <div>
         <a href="login.php" class="btn">LOGIN</a>
-        <a href="#" class="btn">BUY NOW</a>
+        <a href="#" class="btn">CART</a>
     </div>
     
 
