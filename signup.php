@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<html>
 <head>
-    <title>Create Account</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap');
@@ -16,9 +15,6 @@ body {
     font-family: 'Poppins', sans-serif;
     height: 100vh;
     background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 /* Glass card */
@@ -104,9 +100,10 @@ button:hover {
 
 </style>
 
-<body>
 
-<div class="container">
+<?php include 'navbarnova.php'; ?>
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 80px);">
     <div class="card">
         <h2>Create Account</h2>
 
@@ -127,12 +124,11 @@ button:hover {
             </div>
 
             <button name="signup">Sign Up</button>
+
+            <p class="extra">Already have an account? <a href="login.php">Login</a></p>
         </form>
     </div>
 </div>
-
-</body>
-</html>
 
  
 
