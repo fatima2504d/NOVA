@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2026 at 01:35 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: May 17, 2026 at 09:51 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `jeani_jewllery`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `cart_id` int(11) NOT NULL,
+  `session_id` varchar(100) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `quantity` int(11) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -44,7 +57,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `user_id`, `total_amount`, `status`, `payment_method`, `address`, `city`, `phone`, `created_at`) VALUES
-(6, 1, '500.00', 'pending', 'COD', 'nazmabad aptech site', 'karachi', 837822782, '2026-05-03 15:37:51');
+(6, 1, 500.00, 'pending', 'COD', 'nazmabad aptech site', 'karachi', 837822782, '2026-05-03 15:37:51');
 
 -- --------------------------------------------------------
 
@@ -74,7 +87,9 @@ CREATE TABLE `products` (
   `price` decimal(10,2) NOT NULL,
   `brand` varchar(100) NOT NULL,
   `metal` varchar(50) NOT NULL,
-  `size` varchar(50) NOT NULL
+  `size` varchar(50) NOT NULL,
+  `product_image` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -100,11 +115,18 @@ INSERT INTO `users_info` (`user_id`, `username`, `email`, `password`, `address`,
 (1, 'Doreamon', 'doreamon@gmail.com', 'abc123', 'gjsdaj', 123456),
 (2, 'barbie', 'barbie@gmail.com', 'xyz123', 'hggjjg', 5876689),
 (3, 'doreamon', 'doreamon@gmail.com', '$2y$10$NdOsCzSHLaqfAeI6Tz6Y.eovtobY1BEt29mcrEUWsgbAY0IlLJ2PC', '', 0),
-(4, 'haniya', 'hania2504d@aptechsite.net', '$2y$10$j46rnbksUeddZqOpP9GzSOIyH6SLSXx0s/5bdssd8qm0dD/LetBVa', '', 0);
+(4, 'haniya', 'hania2504d@aptechsite.net', '$2y$10$j46rnbksUeddZqOpP9GzSOIyH6SLSXx0s/5bdssd8qm0dD/LetBVa', '', 0),
+(5, 'doreamon', 'hania2504d@aptechsite.net', '$2y$10$7PCmr8ExeXfuSI3IrEy2Iu2YSQ91Nvl87zRBVLghVBCZdmMjaPELq', '', 0);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`cart_id`);
 
 --
 -- Indexes for table `orders`
@@ -138,10 +160,16 @@ ALTER TABLE `users_info`
 --
 
 --
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `orders_item`
@@ -159,7 +187,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users_info`
 --
 ALTER TABLE `users_info`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
