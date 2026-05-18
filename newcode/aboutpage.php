@@ -105,7 +105,7 @@
 
     <!-- Right Side Image -->
     <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=800&q=80" 
+        <img src="watch/watch 7.webp" 
              alt="NOVA Brand Journey">
     </div>
 
